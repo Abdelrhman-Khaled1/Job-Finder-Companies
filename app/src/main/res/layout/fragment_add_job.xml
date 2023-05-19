@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
     tools:context=".addJobFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:inputType="textPersonName"
+            android:hint="Job Title"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/JobTitle"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:inputType="textPersonName"
+            android:hint="Job Description"
+            android:layout_marginBottom="20dp"
+            android:padding="20dp"
+            android:id="@+id/JobDescription"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:inputType="textPersonName"
+            android:hint="Job Requirements"
+            android:layout_marginBottom="20dp"
+            android:padding="20dp"
+            android:id="@+id/JobRequirement"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:inputType="textPersonName"
+            android:hint="Location"
+            android:layout_marginBottom="20dp"
+            android:padding="20dp"
+            android:id="@+id/JobLocation"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="For disable people"
+                android:textSize="30dp"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_marginLeft="40dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:id="@+id/JobDisable"
+                />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:id="@+id/publish"
+            android:text="Publish"
+            android:textColor="@color/colorPrimary"
+            app:backgroundTint="@null"
+            android:textAllCaps="false"
+            android:background="@drawable/button_background"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
