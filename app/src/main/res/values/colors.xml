@@ -6,4 +6,9 @@
     <color name="colorBlack">#000000</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="bottom_nav_background">#FEDBD0</color>
+    <color name="bottom_nav_item">#8C706D</color>
+    <color name="bottom_nav_selectedItem">#220006</color>
+    <color name="fragment_bg_color">#FDF8F4</color>
 </resources>
