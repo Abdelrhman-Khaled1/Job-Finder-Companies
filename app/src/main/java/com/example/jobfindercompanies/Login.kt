@@ -8,9 +8,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class Login : AppCompatActivity() {
     var mAuth : FirebaseAuth? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +35,39 @@ class Login : AppCompatActivity() {
                 mAuth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener {
                     if(it.isSuccessful){
                         val homeIntent = Intent(this,HomePage::class.java)
+
+
+
+
+                        val database : FirebaseDatabase = FirebaseDatabase.getInstance()
+                         val databaseReference = database.getReference("Companies")
+
+                        val query = databaseReference.orderByChild("email").equalTo(email)
+                        query.addListenerForSingleValueEvent(object : ValueEventListener {
+                            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                                for (snapshot in dataSnapshot.children) {
+                                    // Retrieve the company object from the snapshot
+                                    val company = snapshot.getValue(Company::class.java)
+                                    // Do something with the company object
+                                    Globals.company = company
+                                }
+                            }
+
+                            override fun onCancelled(databaseError: DatabaseError) {
+                                // Handle the error
+                            }
+                        })
+
+
+
+
+
+
+
+
+
+
+
                         startActivity(homeIntent)
                         finish()
                     }else{

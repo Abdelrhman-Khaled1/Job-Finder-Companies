@@ -1,19 +1,20 @@
 package com.example.jobfindercompanies
 
+import android.content.Intent.getIntent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
 import java.util.Calendar
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,7 +44,6 @@ class addJobFragment : Fragment() {
 
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -57,7 +57,8 @@ class addJobFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_job, container, false)
+        val view = inflater.inflate(R.layout.fragment_add_job, container, false)
+        return view
     }
 
     companion object {
@@ -90,12 +91,14 @@ class addJobFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
 
 
+
         JobTitle = view.findViewById(R.id.JobTitle)
         JobDescription = view.findViewById(R.id.JobDescription)
         JobRequirement = view.findViewById(R.id.JobRequirement)
         JobLocation = view.findViewById(R.id.JobLocation)
         checkBox = view.findViewById(R.id.JobDisable)
         button = view.findViewById(R.id.publish)
+
 
 
         button.setOnClickListener(View.OnClickListener {
@@ -117,7 +120,7 @@ class addJobFragment : Fragment() {
 
                 job.date = getCurrentDate()
 
-//                job.publisher = mAuth?.currentUser.toString()
+                job.publisher = Globals.company!!.name
 
 
                 val id = myRef.push().key
@@ -132,7 +135,10 @@ class addJobFragment : Fragment() {
 
 
     }
-
+    private fun showToast(message: String) {
+        val toast = Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT)
+        toast.show()
+    }
     private fun getCurrentDate() : String{
         val calendar = Calendar.getInstance()
         val mdformat = SimpleDateFormat("EEEE hh:mm a")

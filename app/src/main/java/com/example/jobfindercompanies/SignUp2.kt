@@ -44,10 +44,10 @@ class SignUp2 : AppCompatActivity() {
             val id = myRef.push().key
             company.id = id.toString()
             myRef.child(id.toString()).setValue(company)
+            Globals.company = company
 
             val lastIntent = Intent(this , HomePage::class.java)
             startActivity(lastIntent)
-
         })
     }
 }
