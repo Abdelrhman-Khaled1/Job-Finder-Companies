@@ -21,7 +21,7 @@ class SignUp2 : AppCompatActivity() {
 
 
 
-        var company = intent.getSerializableExtra("firstPage") as? Company
+         var company = intent.getSerializableExtra("firstPage") as? Company
 
 //        Toast.makeText(this,company?.name, Toast.LENGTH_LONG ).show()
 

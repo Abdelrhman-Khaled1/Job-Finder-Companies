@@ -5,6 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.Calendar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +29,20 @@ class addJobFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+
+
+    private lateinit var JobTitle : EditText
+    private lateinit var JobDescription : EditText
+    private lateinit var JobRequirement : EditText
+    private lateinit var JobLocation : EditText
+    private lateinit var checkBox: CheckBox
+    private lateinit var button : Button
+
+    var mAuth : FirebaseAuth? = null
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,5 +78,65 @@ class addJobFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val database = FirebaseDatabase.getInstance()
+        val myRef = database.getReference("Jobs")
+
+        mAuth = FirebaseAuth.getInstance()
+
+
+        JobTitle = view.findViewById(R.id.JobTitle)
+        JobDescription = view.findViewById(R.id.JobDescription)
+        JobRequirement = view.findViewById(R.id.JobRequirement)
+        JobLocation = view.findViewById(R.id.JobLocation)
+        checkBox = view.findViewById(R.id.JobDisable)
+        button = view.findViewById(R.id.publish)
+
+
+        button.setOnClickListener(View.OnClickListener {
+
+            val title = JobTitle.text.toString()
+            val description = JobTitle.text.toString()
+            val requirement = JobTitle.text.toString()
+            val location = JobTitle.text.toString()
+            val disable = checkBox.isChecked
+
+            if(title.isNotEmpty() && description.isNotEmpty() && requirement.isNotEmpty() && location.isNotEmpty()){
+                val job : Job = Job()
+
+                job.title = title
+                job.description = description
+                job.requirement = requirement
+                job.location = location
+                job.forDisabledPeople = disable
+
+                job.date = getCurrentDate()
+
+//                job.publisher = mAuth?.currentUser.toString()
+
+
+                val id = myRef.push().key
+                job.id = id.toString()
+                myRef.child(id.toString()).setValue(job).addOnCompleteListener {
+                    if(it.isSuccessful){
+                        Toast.makeText(activity,"Job Published",Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        })
+
+
+    }
+
+    private fun getCurrentDate() : String{
+        val calendar = Calendar.getInstance()
+        val mdformat = SimpleDateFormat("EEEE hh:mm a")
+        val strDate = mdformat.format(calendar.time)
+        return strDate
     }
 }

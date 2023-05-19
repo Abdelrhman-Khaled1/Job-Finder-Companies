@@ -11,85 +11,85 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edittext_background"
-            android:inputType="textPersonName"
-            android:hint="Job Title"
-            android:padding="20dp"
-            android:layout_marginBottom="20dp"
             android:id="@+id/JobTitle"
-            />
-
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edittext_background"
-            android:inputType="textPersonName"
-            android:hint="Job Description"
             android:layout_marginBottom="20dp"
-            android:padding="20dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Job Title"
+            android:inputType="textPersonName"
+            android:padding="20dp" />
+
+        <EditText
             android:id="@+id/JobDescription"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Job Description"
+            android:inputType="textPersonName"
+            android:padding="20dp" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edittext_background"
-            android:inputType="textPersonName"
-            android:hint="Job Requirements"
-            android:layout_marginBottom="20dp"
-            android:padding="20dp"
             android:id="@+id/JobRequirement"
-            />
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edittext_background"
-            android:inputType="textPersonName"
-            android:hint="Location"
             android:layout_marginBottom="20dp"
-            android:padding="20dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Job Requirements"
+            android:inputType="textPersonName"
+            android:padding="20dp" />
+
+        <EditText
             android:id="@+id/JobLocation"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Location"
+            android:inputType="textPersonName"
+            android:padding="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:text="For disable people"
-                android:textSize="30dp"/>
+                android:textColor="@color/black"
+                android:textSize="30dp" />
 
             <CheckBox
+                android:id="@+id/JobDisable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
                 android:layout_marginLeft="40dp"
+                android:inputType="numberDecimal"
                 android:scaleX="2"
-                android:scaleY="2"
-                android:id="@+id/JobDisable"
-                />
+                android:scaleY="2" />
         </LinearLayout>
 
         <Button
+            android:id="@+id/publish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:id="@+id/publish"
+            android:background="@drawable/button_background"
             android:text="Publish"
-            android:textColor="@color/colorPrimary"
-            app:backgroundTint="@null"
             android:textAllCaps="false"
-            android:background="@drawable/button_background"/>
+            android:textColor="@color/colorPrimary"
+            app:backgroundTint="@null" />
 
 
     </LinearLayout>
