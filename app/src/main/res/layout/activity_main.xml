@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C58F2"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ellipse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/splash_ellipse" />
+
+    <ImageView
+        android:id="@+id/centralImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationY="-50dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/splash_saly" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/climb_high"
+        android:src="@drawable/splash_exclude"
+        android:layout_marginBottom="-50dp" />
+
+    <TextView
+        android:id="@+id/climb_high"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ellipse"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:lineSpacingExtra="-2sp"
+        android:textSize="32sp"
+        android:text="Find your dream \nTalented employee here"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginHorizontal="60dp"
+        android:text="Get Started"
+        android:textColor="#1C58F2"
+        android:textSize="22sp"
+        android:padding="16dp"
+        />
+
+
+
+
+</RelativeLayout>

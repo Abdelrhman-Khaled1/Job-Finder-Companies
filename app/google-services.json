@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "365812244377",
+    "firebase_url": "https://job-finder-60a5f-default-rtdb.firebaseio.com",
+    "project_id": "job-finder-60a5f",
+    "storage_bucket": "job-finder-60a5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365812244377:android:82457f6dd5dd9b3e6cbd08",
+        "android_client_info": {
+          "package_name": "com.example.cplproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365812244377-6t9r8otubd0i14i29tottq59s4rk0qid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cplproject",
+            "certificate_hash": "02cc156198d1b85a32517a77d3f227a865f2d680"
+          }
+        },
+        {
+          "client_id": "365812244377-nkqvl7k5avvc8ipipaenakldkk70c27s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVCmNIIAf7qr73kmV4j6RgUS4wkbEY9y8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365812244377-nkqvl7k5avvc8ipipaenakldkk70c27s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365812244377:android:6626dc51fb54f07c6cbd08",
+        "android_client_info": {
+          "package_name": "com.example.jobfindercompanies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365812244377-c9dsmqqbgkrff4e4e8upoe1oig67jd5o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jobfindercompanies",
+            "certificate_hash": "02cc156198d1b85a32517a77d3f227a865f2d680"
+          }
+        },
+        {
+          "client_id": "365812244377-nkqvl7k5avvc8ipipaenakldkk70c27s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVCmNIIAf7qr73kmV4j6RgUS4wkbEY9y8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365812244377-nkqvl7k5avvc8ipipaenakldkk70c27s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
